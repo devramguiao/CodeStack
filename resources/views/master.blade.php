@@ -8,7 +8,11 @@
 </head>
 <body>
 	<div class="container">
-		<h1>MyTodos</h1>
+		<h1 class="float-left">MyTodos</h1>
+
+		<a class="float-right mt-3" href="{{ url('/logout') }}">Log Out</a>
+
+		<div class="clearfix"></div>
 		@yield('content')
 	</div>
 </body>

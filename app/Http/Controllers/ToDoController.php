@@ -32,6 +32,13 @@ class ToDoController extends Controller
 
     public function store(Request $request)
     {
+        request()->validate(
+            [
+                'name' => 'required',
+                'description' => 'required'
+            ]
+        );
+
     	$name = $request->name;
     	$description = $request->description;
 
@@ -43,7 +50,7 @@ class ToDoController extends Controller
 
     	$task->save();
 
-    	return redirect('/')
+    	return redirect('/tasks')
     					->with('success', 'Saved successfully!');
     }
 
@@ -57,6 +64,13 @@ class ToDoController extends Controller
 
     public function update(Request $request, $id)
     {
+        request()->validate(
+            [
+                'name' => 'required',
+                'description' => 'required'
+            ]
+        );
+        
     	$name = $request->name;
     	$description = $request->description;
 
@@ -77,7 +91,7 @@ class ToDoController extends Controller
 
     	$task->delete();
     	
-    	return redirect('/')
+    	return redirect('/tasks')
     					->with('success', 'Deleted successfully!');
     }
 }

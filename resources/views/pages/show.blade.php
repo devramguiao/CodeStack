@@ -15,7 +15,7 @@
 	</div>
 	
 	<hr />
-	<a href="{{ url('/') }}" class="btn btn-warning">Back</a>
+	<a href="{{ url('/tasks') }}" class="btn btn-warning">Back</a>
 	
 	<a href="{{ url('tasks/'.$task->id.'/edit') }}" class="btn btn-primary">Edit</a>
 	<br />
